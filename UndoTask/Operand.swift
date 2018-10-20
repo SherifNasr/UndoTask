@@ -18,4 +18,25 @@ enum OperatorSign: String {
 struct Operand {
     var number: Int
     var operation: OperatorSign
+    var isRemoved: Bool
+
+    init(number: Int, operation: OperatorSign, isRemoved: Bool = false) {
+        self.number = number
+        self.operation = operation
+        self.isRemoved = isRemoved
+    }
+
+    mutating func revrse() {
+        switch operation {
+        case .add:
+            operation = .minus
+        case .minus:
+            operation = .add
+        case .division:
+            operation = .multipy
+        case .multipy:
+            operation = .division
+        }
+        isRemoved = !isRemoved
+    }
 }

@@ -30,7 +30,6 @@ class CalcViewController: UIViewController {
     var operationBtns: [UIButton] =  []
     var displayItems: [Operand] = []
     let presenter = CalcPresenter()
-    var result: Int = 0
     let reseultPrefix = "Result = "
     var currentOperation: OperatorSign? {
         didSet{
@@ -53,10 +52,6 @@ class CalcViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         operationBtns = [divideBtn, multiplyBtn, addBtn, minusBtn]
-        displayItems = [Operand(number: 2, operation: .add),
-        Operand(number: 3, operation: .minus),
-        Operand(number: 6, operation: .multipy),
-        Operand(number: 6, operation: .multipy)]
         updateUI()
     }
 
@@ -65,36 +60,31 @@ class CalcViewController: UIViewController {
         redoBtn.isEnabled = presenter.canRedo()
         undoBtn.isEnabled = presenter.canUndo()
         equalBtn.isEnabled = currentOperation != nil && !operandTextField.text!.isEmpty
+        resultLabel.text = reseultPrefix + presenter.getResultString()
+        displayItems = presenter.displayItems
+        collectionView.reloadData()
     }
-
-    fileprivate func getResultString() -> String {
-        guard let currentOperation = currentOperation,
-            let newOperand = Int(operandTextField.text ?? "")  else {return reseultPrefix + "\(result)"}
-        switch currentOperation {
-        case .add:
-            result = result + newOperand
-        case .minus:
-            result = result - newOperand
-        case .multipy:
-            result = result * newOperand
-        case .division:
-            result = result / newOperand
-        }
-        return reseultPrefix + "\(result)"
-    }
-
 
     // MARK: - Actions
     @IBAction func redoButtonPressed(_ sender: UIButton) {
+        presenter.redo()
+        updateUI()
     }
 
     @IBAction func equalBtnPressed(_ sender: UIButton) {
-        resultLabel.text = getResultString()
+        if let number = Int(operandTextField.text ?? ""),
+            let currentOperation = currentOperation {
+            let newOperand =  Operand(number: number, operation: currentOperation)
+            presenter.doNewOperation(operand: newOperand)
+        }
+        updateUI()
         currentOperation = nil
         operandTextField.text = ""
     }
 
     @IBAction func undoBtnPressed(_ sender: UIButton) {
+        presenter.undo()
+        updateUI()
     }
 
     @IBAction func operandBtnPressed(_ sender: UIButton) {
@@ -135,12 +125,11 @@ extension CalcViewController: UICollectionViewDataSource {
 
 }
 
-extension CalcViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        displayItems.remove(at: indexPath.row)
-        collectionView.reloadData()
-    }
-}
+//extension CalcViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        collectionView.reloadData()
+//    }
+//}
 
 extension CalcViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -157,13 +146,8 @@ extension CalcViewController: UITextFieldDelegate {
             let isIntValue = Int(string) != nil
             textField.text = isIntValue ? (textField.text ?? "") + string : textField.text ?? ""
             updateUI()
-            return false
+            return string == "" ? true : false
         }
         return true
     }
 }
-
-
-
-
-
