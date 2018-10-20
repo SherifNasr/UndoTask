@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		93815F9F217AF62C0048AA6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815F9E217AF62C0048AA6A /* AppDelegate.swift */; };
-		93815FA1217AF62C0048AA6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815FA0217AF62C0048AA6A /* ViewController.swift */; };
+		93815FA1217AF62C0048AA6A /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815FA0217AF62C0048AA6A /* CalcViewController.swift */; };
 		93815FA4217AF62C0048AA6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93815FA2217AF62C0048AA6A /* Main.storyboard */; };
-		93815FA6217AF62D0048AA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93815FA5217AF62D0048AA6A /* Assets.xcassets */; };
-		93815FA9217AF62D0048AA6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93815FA7217AF62D0048AA6A /* LaunchScreen.storyboard */; };
+		93815FB4217B050D0048AA6A /* Operand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815FB3217B050D0048AA6A /* Operand.swift */; };
+		93815FB6217B09B20048AA6A /* OperandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815FB5217B09B20048AA6A /* OperandCell.swift */; };
+		93815FBD217B0BA70048AA6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93815FB9217B0BA70048AA6A /* LaunchScreen.storyboard */; };
+		93815FBE217B0BA70048AA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93815FBB217B0BA70048AA6A /* Assets.xcassets */; };
+		93815FBF217B0BA70048AA6A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93815FBC217B0BA70048AA6A /* Info.plist */; };
+		93815FC1217B4EB60048AA6A /* CalcPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93815FC0217B4EB60048AA6A /* CalcPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93815F9B217AF62C0048AA6A /* UndoTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndoTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93815F9E217AF62C0048AA6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93815FA0217AF62C0048AA6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93815FA0217AF62C0048AA6A /* CalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewController.swift; sourceTree = "<group>"; };
 		93815FA3217AF62C0048AA6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		93815FA5217AF62D0048AA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		93815FA8217AF62D0048AA6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		93815FAA217AF62D0048AA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93815FB3217B050D0048AA6A /* Operand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operand.swift; sourceTree = "<group>"; };
+		93815FB5217B09B20048AA6A /* OperandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperandCell.swift; sourceTree = "<group>"; };
+		93815FBA217B0BA70048AA6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93815FBB217B0BA70048AA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93815FBC217B0BA70048AA6A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93815FC0217B4EB60048AA6A /* CalcPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				93815F9D217AF62C0048AA6A /* UndoTask */,
+				93815FB7217B0BA70048AA6A /* Resources */,
 				93815F9C217AF62C0048AA6A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,9 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				93815FB0217AF69A0048AA6A /* AppDelegate */,
-				93815FA0217AF62C0048AA6A /* ViewController.swift */,
 				93815FA2217AF62C0048AA6A /* Main.storyboard */,
-				93815FB2217AF6E30048AA6A /* Resources */,
+				93815FA0217AF62C0048AA6A /* CalcViewController.swift */,
+				93815FB5217B09B20048AA6A /* OperandCell.swift */,
+				93815FB3217B050D0048AA6A /* Operand.swift */,
+				93815FC0217B4EB60048AA6A /* CalcPresenter.swift */,
 			);
 			path = UndoTask;
 			sourceTree = "<group>";
@@ -70,22 +80,23 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		93815FB1217AF6C50048AA6A /* LaunchScreen */ = {
+		93815FB7217B0BA70048AA6A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				93815FA7217AF62D0048AA6A /* LaunchScreen.storyboard */,
+				93815FB8217B0BA70048AA6A /* LaunchScreen */,
+				93815FBB217B0BA70048AA6A /* Assets.xcassets */,
+				93815FBC217B0BA70048AA6A /* Info.plist */,
 			);
-			path = LaunchScreen;
+			name = Resources;
+			path = UndoTask/Resources;
 			sourceTree = "<group>";
 		};
-		93815FB2217AF6E30048AA6A /* Resources */ = {
+		93815FB8217B0BA70048AA6A /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				93815FA5217AF62D0048AA6A /* Assets.xcassets */,
-				93815FB1217AF6C50048AA6A /* LaunchScreen */,
-				93815FAA217AF62D0048AA6A /* Info.plist */,
+				93815FB9217B0BA70048AA6A /* LaunchScreen.storyboard */,
 			);
-			path = Resources;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +157,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93815FA9217AF62D0048AA6A /* LaunchScreen.storyboard in Resources */,
-				93815FA6217AF62D0048AA6A /* Assets.xcassets in Resources */,
+				93815FBF217B0BA70048AA6A /* Info.plist in Resources */,
 				93815FA4217AF62C0048AA6A /* Main.storyboard in Resources */,
+				93815FBE217B0BA70048AA6A /* Assets.xcassets in Resources */,
+				93815FBD217B0BA70048AA6A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93815FA1217AF62C0048AA6A /* ViewController.swift in Sources */,
+				93815FB4217B050D0048AA6A /* Operand.swift in Sources */,
+				93815FC1217B4EB60048AA6A /* CalcPresenter.swift in Sources */,
+				93815FB6217B09B20048AA6A /* OperandCell.swift in Sources */,
+				93815FA1217AF62C0048AA6A /* CalcViewController.swift in Sources */,
 				93815F9F217AF62C0048AA6A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,10 +190,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		93815FA7217AF62D0048AA6A /* LaunchScreen.storyboard */ = {
+		93815FB9217B0BA70048AA6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				93815FA8217AF62D0048AA6A /* Base */,
+				93815FBA217B0BA70048AA6A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -306,7 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGT283KSPA;
-				INFOPLIST_FILE = UndoTask/Info.plist;
+				INFOPLIST_FILE = UndoTask/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGT283KSPA;
-				INFOPLIST_FILE = UndoTask/Info.plist;
+				INFOPLIST_FILE = UndoTask/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
