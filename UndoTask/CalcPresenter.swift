@@ -55,7 +55,13 @@ class CalcPresenter: NSObject {
             let operand = operationHistory[currentPointer]
             operationHistory.append(operand)
             calculateFinalResult(operand: operand)
-            displayItems.append(operand)
+            if operand.isRemoved {
+                if !displayItems.isEmpty {
+                    displayItems.remove(at: displayItems.count - 1)
+                }
+            } else {
+                displayItems.append(operand)
+            }
         }
     }
 
